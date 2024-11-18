@@ -11,7 +11,9 @@ public class TakingTurnsQueueTests
     // Scenario: Create a queue with the following people and turns: Bob (2), Tim (5), Sue (3) and
     // run until the queue is empty
     // Expected Result: Bob, Tim, Sue, Bob, Tim, Sue, Tim, Sue, Tim, Tim
-    // Defect(s) Found: 
+    // Defect(s) Found: the insert(0, person) method from personqueue.cs places the new person at the beginning of the list
+    // thus making it behave like a stack and not a queue. The dequeue method works well, 
+    // however since the enqueue inserts at the beginning, this results in incorrect behavior 
     public void TestTakingTurnsQueue_FiniteRepetition()
     {
         var bob = new Person("Bob", 2);
